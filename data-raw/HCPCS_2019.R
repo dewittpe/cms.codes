@@ -4,11 +4,17 @@ tmpdir <- tempdir()
 
 # Unzip files  {{{
 
-zip_files <- list.files(path = ".", pattern = "^.+\\.zip$")
+zip_files <- list.files(path = "HCPCS", pattern = "^.+\\.zip$")
 
-for (zf in zip_files) {
-  unzip(zf, exdir = paste(tmpdir, sub("^(\\d{4}).+$", "\\1", zf), sub("^\\d{4}-(.+)\\.zip$", "\\1", zf), sep = "/"))
-}
+# for (zf in zip_files) {
+#   unzip(zf,
+#         exdir =
+#           paste(tmpdir, sub("^.+(\\d{4}).+$", "\\1", zf), sub("^.+\\d{4}-(.+)\\.zip$", "\\1", zf), sep = "/")
+#   )
+# }
+
+unzip("HCPCS/2019-Alpha-Numeric-HCPCS-File.zip", exdir = tmpdir)
+
 
 # }}}
 
@@ -16,7 +22,7 @@ list.files(tmpdir, recursive = TRUE, pattern = "2019", full.names = T)
 
 
 # import the 2019 hcpcs data
-HCPCS_2019 <- data.table::fread(paste(tmpdir, "2019", "Alpha-Numeric-HCPCS-File", "HCPC2019_CONTR_ANWEB.txt", sep = "/"),
+HCPCS_2019 <- data.table::fread(paste(tmpdir, "HCPC2019_CONTR_ANWEB.txt", sep = "/"),
                                 sep = "\n", skip = 8,
                                 header = FALSE,
                                 strip.white = FALSE)

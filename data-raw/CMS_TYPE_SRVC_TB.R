@@ -1,7 +1,7 @@
 # CMS_TYPE_SRVC_TB
 
 tmpdir <- tempdir()
-unzip("2019-HCPCS-Record-Layout.zip", exdir = tmpdir)
+unzip("HCPCS/2019-HCPCS-Record-Layout.zip", exdir = tmpdir)
 
 list.files(tmpdir, full.name = TRUE)
 
