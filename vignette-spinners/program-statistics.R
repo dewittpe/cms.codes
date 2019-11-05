@@ -20,7 +20,7 @@ options(qwraps2_markup = "markdown")
 #'
 #' If you are interested in verifying the construction of the provided data sets
 #' you can view the code and verify the source data at
-#' https://github.com/dewittpe/cms.program.statistics.
+#' https://github.com/dewittpe/cms.codes.
 #'
 #' This vignette provides a summary of the data sets provided.  Each of the
 #' data sets are provided as pure data.tables.  Many of the names for the
@@ -45,7 +45,7 @@ library(data.table)
 #' values are in person years and subject to standard disclaimers regarding
 #' rounding issues.
 #+ label = "list_enrollment_datasets", echo = FALSE, results = 'asis'
-enrollment_data_sets <- data(package = "cms.program.statistics")$results
+enrollment_data_sets <- data(package = "cms.codes")$results
 enrollment_data_sets <- enrollment_data_sets[grepl("^MDCR_ENROLL_.*", enrollment_data_sets[, "Item"]), c("Item", "Title")]
 enrollment_data_sets[, "Item"] %<>% paste0("[", ., "](#", tolower(gsub("_", "-", .)), ")")
 knitr::kable(enrollment_data_sets)
@@ -58,7 +58,7 @@ knitr::kable(enrollment_data_sets)
 #' and Other Health Plan Enrollment
 #'
 #' Load the data set:
-data(MDCR_ENROLL_AB_01, package = "cms.program.statistics")
+data(MDCR_ENROLL_AB_01, package = "cms.codes")
 
 #'
 #' This data set contains total enrollment data for the years
@@ -135,7 +135,7 @@ knitr::kable(MDCR_ENROLL_AB_01)
 #' Other Health Plan Enrollment, and Resident Population, by Area of Residence.
 #'
 # Load the data set.
-data(MDCR_ENROLL_AB_02, package = "cms.program.statistics")
+data(MDCR_ENROLL_AB_02, package = "cms.codes")
 MDCR_ENROLL_AB_02 %<>% as.data.table
 
 #'
@@ -163,7 +163,7 @@ MDCR_ENROLL_AB_02[`Area of Residence` == "Colorado"] %>% knitr::kable(.)
 #' Enrollees
 #'
 # Load the data set.
-data(MDCR_ENROLL_AB_03, package = "cms.program.statistics")
+data(MDCR_ENROLL_AB_03, package = "cms.codes")
 MDCR_ENROLL_AB_03 %<>% as.data.table
 
 #'
@@ -179,7 +179,7 @@ cat(paste("*", names(MDCR_ENROLL_AB_03)), sep = "\n")
 #'
 #' Total Medicare Enrollment: Part A and/or Part B Enrollees, by Age Group
 #'
-data(MDCR_ENROLL_AB_04, package = "cms.program.statistics")
+data(MDCR_ENROLL_AB_04, package = "cms.codes")
 str(MDCR_ENROLL_AB_04)
 
 # /* End of MDCR ENROOL AB 04 }}} */
@@ -191,7 +191,7 @@ str(MDCR_ENROLL_AB_04)
 #' Total Medicare Enrollment: Total Medicare Enrollment: Part A and/or Part B
 #' Enrollment by Demographic Caharacteristics
 #'
-data(MDCR_ENROLL_AB_05, package = "cms.program.statistics")
+data(MDCR_ENROLL_AB_05, package = "cms.codes")
 str(MDCR_ENROLL_AB_05)
 
 # /* End of MDCR ENROOL AB 05 }}} */
@@ -203,7 +203,7 @@ str(MDCR_ENROLL_AB_05)
 #' Total Medicare Enrollment: Part A and/or Part B Enrollees, by Type of
 #' Entitlement and Demographic Characteristics
 #'
-data(MDCR_ENROLL_AB_06, package = "cms.program.statistics")
+data(MDCR_ENROLL_AB_06, package = "cms.codes")
 str(MDCR_ENROLL_AB_06)
 
 # /* End of MDCR ENROOL AB 06 }}} */
@@ -215,7 +215,7 @@ str(MDCR_ENROLL_AB_06)
 #' Total Medicare Enrollment: Part A and/or Part B Total, Aged, and Disabled
 #' Enrollees, by Area of Residence
 #'
-data(MDCR_ENROLL_AB_07, package = "cms.program.statistics")
+data(MDCR_ENROLL_AB_07, package = "cms.codes")
 str(MDCR_ENROLL_AB_07)
 
 # /* End of MDCR ENROOL AB 07 }}} */
@@ -227,7 +227,7 @@ str(MDCR_ENROLL_AB_07)
 #' Total Medicare Enrollment: Part A and/or Part B Enrollees, by Type of
 #' Entitlement and Area of Residence
 #'
-data(MDCR_ENROLL_AB_08, package = "cms.program.statistics")
+data(MDCR_ENROLL_AB_08, package = "cms.codes")
 str(MDCR_ENROLL_AB_08)
 
 # /* End of MDCR ENROOL AB 08 }}} */
@@ -245,7 +245,7 @@ str(MDCR_ENROLL_AB_08)
 #'>
 #'>The Healthcare Provider Taxonomy Codes and code descriptions that health care providers select when applying for NPIs may or may not be the same as the categorizations used by Medicare and other health plans in their enrollment and credentialing activities.  The Healthcare Provider Taxonomy Code or code description information collected by NPPES is used to help uniquely identify health care providers in order to assign them NPIs, not to ensure that they are credentialed or qualified to render health care.
 #'
-data(PROVIDER_TAXONOMY, package = "cms.program.statistics")
+data(PROVIDER_TAXONOMY, package = "cms.codes")
 
 #'
 #' there are several footnotes provided with the data.  These footnotes have
@@ -255,7 +255,7 @@ data(PROVIDER_TAXONOMY, package = "cms.program.statistics")
 # /*
 if (!interactive()) {
 # */
-help("PROVIDER_TAXONOMY", package = "cms.program.statistics")
+help("PROVIDER_TAXONOMY", package = "cms.codes")
 # /*
 }
 # */
@@ -276,6 +276,6 @@ str(PROVIDER_TAXONOMY, width = 80, strict.width = "cut")
 #' "These codes should be used on professional claims to specify the entity
 #' where service(s) were rendered."
 #'
-data("PLACE_OF_SERVICE", package = "cms.program.statistics")
+data("PLACE_OF_SERVICE", package = "cms.codes")
 str(PLACE_OF_SERVICE)
 # /* }}} */

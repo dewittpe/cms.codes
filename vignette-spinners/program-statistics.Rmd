@@ -22,7 +22,7 @@ https://www.cms.gov/Research-Statistics-Data-and-Systems/Statistics-Trends-and-R
 
 If you are interested in verifying the construction of the provided data sets
 you can view the code and verify the source data at
-https://github.com/dewittpe/cms.program.statistics.
+https://github.com/dewittpe/cms.codes.
 
 This vignette provides a summary of the data sets provided.  Each of the
 data sets are provided as pure data.tables.  Many of the names for the
@@ -50,7 +50,7 @@ values are in person years and subject to standard disclaimers regarding
 rounding issues.
 
 ```{r label = "list_enrollment_datasets", echo = FALSE, results = 'asis'}
-enrollment_data_sets <- data(package = "cms.program.statistics")$results
+enrollment_data_sets <- data(package = "cms.codes")$results
 enrollment_data_sets <- enrollment_data_sets[grepl("^MDCR_ENROLL_.*", enrollment_data_sets[, "Item"]), c("Item", "Title")]
 enrollment_data_sets[, "Item"] %<>% paste0("[", ., "](#", tolower(gsub("_", "-", .)), ")")
 knitr::kable(enrollment_data_sets)
@@ -65,7 +65,7 @@ and Other Health Plan Enrollment
 Load the data set:
 
 ```{r }
-data(MDCR_ENROLL_AB_01, package = "cms.program.statistics")
+data(MDCR_ENROLL_AB_01, package = "cms.codes")
 ```
 
 
@@ -149,7 +149,7 @@ Other Health Plan Enrollment, and Resident Population, by Area of Residence.
 
 ```{r }
 # Load the data set.
-data(MDCR_ENROLL_AB_02, package = "cms.program.statistics")
+data(MDCR_ENROLL_AB_02, package = "cms.codes")
 MDCR_ENROLL_AB_02 %<>% as.data.table
 ```
 
@@ -183,7 +183,7 @@ Enrollees
 
 ```{r }
 # Load the data set.
-data(MDCR_ENROLL_AB_03, package = "cms.program.statistics")
+data(MDCR_ENROLL_AB_03, package = "cms.codes")
 MDCR_ENROLL_AB_03 %<>% as.data.table
 ```
 
@@ -202,7 +202,7 @@ Total Medicare Enrollment: Part A and/or Part B Enrollees, by Age Group
 
 
 ```{r }
-data(MDCR_ENROLL_AB_04, package = "cms.program.statistics")
+data(MDCR_ENROLL_AB_04, package = "cms.codes")
 str(MDCR_ENROLL_AB_04)
 ```
 
@@ -215,7 +215,7 @@ Enrollment by Demographic Caharacteristics
 
 
 ```{r }
-data(MDCR_ENROLL_AB_05, package = "cms.program.statistics")
+data(MDCR_ENROLL_AB_05, package = "cms.codes")
 str(MDCR_ENROLL_AB_05)
 ```
 
@@ -228,7 +228,7 @@ Entitlement and Demographic Characteristics
 
 
 ```{r }
-data(MDCR_ENROLL_AB_06, package = "cms.program.statistics")
+data(MDCR_ENROLL_AB_06, package = "cms.codes")
 str(MDCR_ENROLL_AB_06)
 ```
 
@@ -241,7 +241,7 @@ Enrollees, by Area of Residence
 
 
 ```{r }
-data(MDCR_ENROLL_AB_07, package = "cms.program.statistics")
+data(MDCR_ENROLL_AB_07, package = "cms.codes")
 str(MDCR_ENROLL_AB_07)
 ```
 
@@ -254,7 +254,7 @@ Entitlement and Area of Residence
 
 
 ```{r }
-data(MDCR_ENROLL_AB_08, package = "cms.program.statistics")
+data(MDCR_ENROLL_AB_08, package = "cms.codes")
 str(MDCR_ENROLL_AB_08)
 ```
 
@@ -273,7 +273,7 @@ webpage](https://www.cms.gov/Medicare/Provider-Enrollment-and-Certification/Medi
 
 
 ```{r }
-data(PROVIDER_TAXONOMY, package = "cms.program.statistics")
+data(PROVIDER_TAXONOMY, package = "cms.codes")
 ```
 
 
@@ -282,7 +282,7 @@ been summarized in the Details section of the man file for the data set.
 Please read the man file.
 
 ```{r eval = FALSE}
-help("PROVIDER_TAXONOMY", package = "cms.program.statistics")
+help("PROVIDER_TAXONOMY", package = "cms.codes")
 ```
 
 
@@ -304,7 +304,7 @@ where service(s) were rendered."
 
 
 ```{r }
-data("PLACE_OF_SERVICE", package = "cms.program.statistics")
+data("PLACE_OF_SERVICE", package = "cms.codes")
 str(PLACE_OF_SERVICE)
 ```
 
