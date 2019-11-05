@@ -61,6 +61,16 @@ HCPCS_2019$V1[1]
 head(HCPCS_2019, n = 2)
 str(HCPCS_2019)
 
+# remove leading and trailing writespace
+for(j in seq_along(HCPCS_2019)) {
+  data.table::set(HCPCS_2019, j = j, value = sub("^\\s+", "", HCPCS_2019[[j]]))
+  data.table::set(HCPCS_2019, j = j, value = sub("\\s+$", "", HCPCS_2019[[j]]))
+}
+
+# Format the dates correctly
+for(j in grep("_DT$", names(HCPCS_2019))) {
+  data.table::set(HCPCS_2019, j = j, value = as.Date(HCPCS_2019[[j]], "%Y%m%d"))
+}
 
 HCPCS_2019 <- as.data.frame(HCPCS_2019)
 save(HCPCS_2019, file = "../data/HCPCS_2019.rda")
