@@ -33,4 +33,4 @@
 #'
 #' RE: "B4": Does not meet the definition of "health care provider" at 45 CFR 160.103; is not eligible for an NPI.
 #'
-"PROVIDER_TAXONOMY"
+"MDCR_PROVIDER_TAXONOMY"

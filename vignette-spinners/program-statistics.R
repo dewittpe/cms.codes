@@ -245,7 +245,7 @@ str(MDCR_ENROLL_AB_08)
 #'>
 #'>The Healthcare Provider Taxonomy Codes and code descriptions that health care providers select when applying for NPIs may or may not be the same as the categorizations used by Medicare and other health plans in their enrollment and credentialing activities.  The Healthcare Provider Taxonomy Code or code description information collected by NPPES is used to help uniquely identify health care providers in order to assign them NPIs, not to ensure that they are credentialed or qualified to render health care.
 #'
-data(PROVIDER_TAXONOMY, package = "cms.codes")
+data(MDCR_PROVIDER_TAXONOMY, package = "cms.codes")
 
 #'
 #' there are several footnotes provided with the data.  These footnotes have
@@ -255,13 +255,13 @@ data(PROVIDER_TAXONOMY, package = "cms.codes")
 # /*
 if (!interactive()) {
 # */
-help("PROVIDER_TAXONOMY", package = "cms.codes")
+help("MDCR_PROVIDER_TAXONOMY", package = "cms.codes")
 # /*
 }
 # */
 
 #'
-str(PROVIDER_TAXONOMY, width = 80, strict.width = "cut")
+str(MDCR_PROVIDER_TAXONOMY, width = 80, strict.width = "cut")
 
 # /* End of Provider Taxonomy }}} */
 #'
