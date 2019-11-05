@@ -1,14 +1,17 @@
-Package: cms.program.statistics
-Title: Centers for Medicare and Medicaid Program Statistics
+Package: cms.codes
+Title: Centers for Medicare and Medicaid Coding
 Version: 0.0.0.9000
 Authors@R: c(
     person("Peter", "DeWitt", , "dewittpe@gmail.com", role = c("aut", "cre"))
     )
-Description: Streamline data import and culling for the program statistics
-    ata provided by the Centers for Medicare and Medicaid.
+Description: Data sets related Centers for Medicare and Medicare coding and
+    program statistics.  This includes tables on the Healthcare Common Procedure
+    Coding System (HCPCS) codes, BETOS codes, program statistics (enrollment,
+    utilization, providers), place of service codes, and provider taxonomy, and
+    others.
 License: file LICENSE
 Encoding: UTF-8
-URL: https://github.com/dewittpe/cms.program.statistics
+URL: https://github.com/dewittpe/cms.codes
 LazyData: true
 Depends:
    R (>= 3.5.0)
